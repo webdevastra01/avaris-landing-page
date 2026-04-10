@@ -1,67 +1,99 @@
-import { Briefcase, Building2, TrendingUp } from "lucide-react";
+import { Briefcase, Building2, TrendingUp, Check } from "lucide-react";
 import "../styles/SolutionsSection.css";
 
 function SolutionsSection() {
-  const solutions = [
+  const audiences = [
     {
       icon: Building2,
-      title: "For Small Businesses",
+      title: "Small Businesses",
       subtitle: "Running a business already demands your time.",
       description:
         "We handle your sales inquiries so you can focus on operations and growth.",
     },
     {
       icon: TrendingUp,
-      title: "For Growing Companies",
+      title: "Growing Companies",
       subtitle:
         "As your business expands, sales management becomes more complex.",
-      description: "We provide systems and support that scale with you.",
+      description:
+        "Our systems scale with your business and keep your pipeline organized.",
     },
     {
       icon: Briefcase,
-      title: "For Busy Entrepreneurs",
-      subtitle:
-        "You shouldn't have to answer every message or chase every lead.",
+      title: "Busy Entrepreneurs",
+      subtitle: "You shouldn't have to chase every lead yourself.",
       description:
-        "Let Avaris manage your sales conversations while you focus on strategy.",
+        "Let Avaris manage your sales conversations while you focus on strategy and growth.",
+    },
+  ];
+
+  const packageFeatures = [
+    "24/7 inquiry handling",
+    "Organized lead management",
+    "Sales follow-up system",
+    "Clear reporting dashboard",
+  ];
+
+  const reasons = [
+    {
+      title: "Real People Behind Every Conversation",
+      description:
+        "Behind every inquiry is a real person. Our team ensures every conversation is handled professionally and with care.",
+    },
+    {
+      title: "Structured Sales Processes",
+      description:
+        "Sales should never rely on luck. We build structured systems that turn effort into predictable results.",
+      hasStrong: true,
+    },
+    {
+      title: "Reliable Support",
+      description:
+        "Consistency builds trust. Our team shows up every day to ensure your sales pipeline keeps moving.",
+    },
+    {
+      title: "A True Growth Partner",
+      description:
+        "We don't just support your sales. We help you build stronger sales foundations that support long-term growth.",
+      hasStrong: true,
     },
   ];
 
   return (
     <section id="solutions" className="solutions-section section">
       <div className="solutions-container">
+        {/* Who This Is For */}
         <div className="section-header">
-          <span className="section-tagline">Solutions</span>
-          <h2 className="section-title">Solutions For Growing Businesses</h2>
-          <p
-            className="text-body"
-            style={{ marginTop: "var(--space-md)", fontSize: "1.1rem" }}
-          >
-            Whether you're a startup, SME, or growing team, Avaris helps you
-            build a reliable sales engine.
-          </p>
+          <span className="section-tagline">Who This Is For</span>
+          <h2 className="section-title">Built For Growing Businesses</h2>
         </div>
 
         <div className="solutions-grid">
-          {solutions.map((solution, index) => {
-            const IconComponent = solution.icon;
+          {audiences.map((audience, index) => {
+            const IconComponent = audience.icon;
             return (
               <div key={index} className="solution-card">
                 <div className="solution-icon">
                   <IconComponent size={28} strokeWidth={2} />
                 </div>
-                <h3 className="solution-title">{solution.title}</h3>
-                <p className="solution-subtitle">{solution.subtitle}</p>
-                <p className="solution-description">{solution.description}</p>
+                <h3 className="solution-title">{audience.title}</h3>
+                <p className="solution-subtitle">{audience.subtitle}</p>
+                <p className="solution-description">{audience.description}</p>
               </div>
             );
           })}
         </div>
+
+        {/* Featured Offer */}
         <div className="featured-section">
+          <div className="featured-header">
+            <span className="featured-eyebrow">Featured Offer</span>
+            <h3 className="featured-main-title">Try the Avaris Sales System</h3>
+          </div>
+
           <div className="featured-grid">
             <div className="featured-left">
-              <span className="featured-badge">Featured Offer</span>
-              <h3 className="featured-title">Excel Fast Trial Package</h3>
+              <h4 className="featured-title">Excel Fast Trial Package</h4>
               <p className="featured-description">
                 Experience the Avaris system with our Excel Fast Trial Package.
               </p>
@@ -69,9 +101,10 @@ function SolutionsSection() {
                 ₱9,999 <span>Trial Package</span>
               </div>
               <p className="package-note">
-                This is the fastest way to see how a structured sales system can
-                improve your business.
+                Perfect for businesses that want to see how a structured sales
+                system improves results.
               </p>
+              <p className="setup-note">Setup within 48 hours.</p>
               <button className="btn-cta">Start Your Trial Today</button>
             </div>
 
@@ -79,62 +112,58 @@ function SolutionsSection() {
               <div className="package-card">
                 <h4 className="package-title">Includes:</h4>
                 <ul className="package-list">
-                  <li>24/7 inquiry handling</li>
-                  <li>Organized lead management</li>
-                  <li>Sales follow-up system</li>
-                  <li>Clear reporting dashboard</li>
+                  {packageFeatures.map((feature, index) => (
+                    <li key={index}>
+                      <Check size={18} strokeWidth={3} className="check-icon" />
+                      {feature}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Why Avaris */}
         <div className="why-section">
           <div className="why-header">
-            <span
-              className="section-tagline"
-              style={{ marginBottom: "var(--space-md)" }}
-            >
-              Why Avaris
-            </span>
-            <h3 className="why-title">Why Businesses Choose Avaris</h3>
+            <span className="section-tagline">Why Avaris</span>
+            <h3 className="why-title">
+              Why Businesses Choose Avaris Sales Solutions
+            </h3>
           </div>
 
           <div className="why-grid">
-            <div className="why-card">
-              <h4 className="why-card-title">Real People Behind the System</h4>
-              <p className="why-card-text">
-                Behind every inquiry is a real person. Our team ensures every
-                conversation is handled with care.
-              </p>
-            </div>
-
-            <div className="why-card">
-              <h4 className="why-card-title">Structured Sales Processes</h4>
-              <p className="why-card-text">
-                Sales should never depend on luck.{" "}
-                <strong>
-                  We build reliable systems that turn effort into results.
-                </strong>
-              </p>
-            </div>
-
-            <div className="why-card">
-              <h4 className="why-card-title">Consistency & Reliability</h4>
-              <p className="why-card-text">
-                Reliability isn't something you promise once.{" "}
-                <strong>It's something you show every day</strong> through
-                consistent follow-ups and dependable support.
-              </p>
-            </div>
-
-            <div className="why-card">
-              <h4 className="why-card-title">A Partner In Your Growth</h4>
-              <p className="why-card-text">
-                We're not just a service provider.{" "}
-                <strong>We're a growth partner</strong> that helps your business
-                build stronger sales foundations.
-              </p>
-            </div>
+            {reasons.map((reason, index) => (
+              <div key={index} className="why-card">
+                <h4 className="why-card-title">{reason.title}</h4>
+                <p className="why-card-text">
+                  {reason.hasStrong ? (
+                    <>
+                      {reason.title === "Structured Sales Processes" ? (
+                        <>
+                          Sales should never rely on luck.{" "}
+                          <strong>
+                            We build structured systems that turn effort into
+                            predictable results.
+                          </strong>
+                        </>
+                      ) : (
+                        <>
+                          We don't just support your sales.{" "}
+                          <strong>
+                            We help you build stronger sales foundations that
+                            support long-term growth.
+                          </strong>
+                        </>
+                      )}
+                    </>
+                  ) : (
+                    reason.description
+                  )}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -43,7 +43,7 @@ const AboutSection: React.FC = () => {
           {/* Belief Statement */}
           <div className="belief-block">
             <p className="belief-label">
-              Avaris Sales Solutions was built on a simple belief:
+              Avaris Sales Solutions was founded on a simple belief:
             </p>
             <blockquote className="belief-quote">
               Sales should run on systems, not chance.
@@ -53,7 +53,7 @@ const AboutSection: React.FC = () => {
           {/* Problem Statement */}
           <div className="problem-block">
             <p className="about-text">
-              Many businesses work hard to attract leads but struggle to manage
+              Many businesses work hard to generate leads but struggle to manage
               them effectively.
             </p>
             <p className="about-text highlight">
@@ -68,20 +68,22 @@ const AboutSection: React.FC = () => {
               Avaris exists to solve that problem.
             </p>
             <p className="about-text">
-              Our team provides <strong>structured sales support</strong>,{" "}
+              We provide <strong>structured sales support</strong>,{" "}
               <strong>reliable systems</strong>, and{" "}
-              <strong>dedicated people</strong> who ensure every inquiry
-              receives attention.
+              <strong>dedicated professionals</strong> who ensure every inquiry
+              is handled properly.
             </p>
           </div>
 
-          {/* Transformation Statement */}
-          <div className="transformation-block">
+          {/* Mission Statement */}
+          <div className="mission-block">
             <p className="about-text">
-              We help businesses{" "}
-              <span className="text-accent">transform chaos into clarity</span>{" "}
-              — turning scattered leads into organized opportunities and effort
-              into predictable growth.
+              Our mission is to help businesses{" "}
+              <span className="text-accent">
+                transform scattered leads into organized opportunities
+              </span>{" "}
+              and turn effort into{" "}
+              <span className="text-accent">predictable growth</span>.
             </p>
           </div>
 

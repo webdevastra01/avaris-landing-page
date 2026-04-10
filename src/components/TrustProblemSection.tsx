@@ -3,7 +3,7 @@ import "../styles/TrustProblemSection.css";
 const TrustProblemSection = () => {
   const problems = [
     "Slow responses to inquiries",
-    "Missed follow-ups",
+    "Missed follow-ups with interested clients",
     "Disorganized lead tracking",
     "Conversations that were never continued",
   ];
@@ -15,8 +15,10 @@ const TrustProblemSection = () => {
         <div className="trust-problem__header">
           <span className="trust-problem__eyebrow">The Hidden Problem</span>
           <h2 className="trust-problem__title">
-            Where Do Your Sales{" "}
-            <span className="trust-problem__highlight">Actually</span> Go?
+            Why Businesses Lose Sales{" "}
+            <span className="trust-problem__highlight">
+              Without Realizing It
+            </span>
           </h2>
         </div>
 
@@ -24,11 +26,11 @@ const TrustProblemSection = () => {
         <div className="trust-problem__intro">
           <p className="trust-problem__lead">Sales rarely fail loudly.</p>
           <p className="trust-problem__sublead">
-            They disappear quietly between:
+            They disappear quietly between small gaps in your process:
           </p>
         </div>
 
-        {/* Problem List */}
+        {/* Problem Grid */}
         <div className="trust-problem__grid">
           {problems.map((problem, index) => (
             <div key={index} className="trust-problem__item">
@@ -52,7 +54,8 @@ const TrustProblemSection = () => {
         {/* Impact Statement */}
         <div className="trust-problem__impact">
           <p className="trust-problem__warning">
-            By the time you notice, opportunities are already gone.
+            By the time you realize it, potential customers have already moved
+            on.
           </p>
         </div>
 
@@ -65,11 +68,12 @@ const TrustProblemSection = () => {
           </div>
 
           <div className="trust-problem__statements">
+            <p className="trust-problem__truth-bold">The truth is simple:</p>
             <p className="trust-problem__falsehood">
               More marketing won't fix this.
             </p>
             <p className="trust-problem__truth">
-              A stronger sales system will.
+              What you need is a sales system that captures every opportunity.
             </p>
           </div>
         </div>
@@ -77,8 +81,12 @@ const TrustProblemSection = () => {
         {/* Closing Statement */}
         <div className="trust-problem__closing">
           <p className="trust-problem__mission">
-            At <strong>Avaris Sales Solutions</strong>, we build the structure
-            that keeps your opportunities moving forward.
+            That's exactly what <strong>Avaris Sales Solutions</strong>{" "}
+            provides.
+          </p>
+          <p className="trust-problem__sub-mission">
+            We help businesses build structured sales processes that turn
+            scattered leads into predictable revenue.
           </p>
         </div>
       </div>

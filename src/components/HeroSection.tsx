@@ -15,116 +15,106 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="hero">
-      {/* Background decorative elements */}
-      <div className="hero__accent-circle hero__accent-circle--top"></div>
-      <div className="hero__accent-circle hero__accent-circle--bottom"></div>
+      {/* Background Image */}
+      <div className="hero__background">
+        <img
+          src={heroImage}
+          alt="Professional business team"
+          className="hero__bg-image"
+        />
+        <div className="hero__overlay"></div>
+      </div>
 
+      {/* Content Card Overlay */}
       <div className="hero__container">
-        <div className="hero__grid">
-          {/* Left Content */}
-          <div className="hero__content">
-            {/* Tagline */}
-            <span className="hero__tagline">
-              Sales Solutions That Work 24/7
-            </span>
+        <div className="hero__content-card">
+          {/* Main Headline */}
+          <h1 className="hero__headline">
+            24/7 Outsourced Sales Support That Turns Leads Into{" "}
+            <span className="hero__highlight">Revenue</span>
+          </h1>
 
-            {/* Main Headline */}
-            <h1 className="hero__headline">
-              Turn Missed Leads Into{" "}
-              <span className="hero__highlight">Consistent Sales</span>
-            </h1>
+          {/* Subheadline */}
+          <p className="hero__subheadline">
+            Stop Missing Opportunities. Start Closing More Deals.
+          </p>
 
-            {/* Subheadline */}
-            <p className="hero__subheadline">
-              Your business deserves a sales system that never stops working.
-              Avaris Sales Solutions provides 24/7 outsourced sales support,
-              lead management, and structured follow-ups so every opportunity
-              gets the attention it deserves.
-            </p>
-
-            {/* Supporting Text / Problem-Solution Block */}
-            <div className="hero__supporting">
-              <div className="hero__problem">
-                <p className="hero__text-muted">
-                  Many businesses don't struggle because of a lack of leads.
-                  They struggle because leads are missed, responses are delayed,
-                  and follow-ups never happen.
-                </p>
-              </div>
-
-              <div className="hero__solution">
-                <span className="hero__solution-badge">We fix that.</span>
-                <p className="hero__text-body">
-                  With Avaris Sales Solutions, your inquiries are handled, your
-                  leads are organized, and your sales process runs smoothly —
-                  even when you're offline.
-                </p>
-              </div>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="hero__actions">
-              <a
-                href="#contact"
-                className="hero__cta hero__cta--primary"
-                onClick={(e) => scrollToSection(e, "#contact")}
-              >
-                Talk to Our Team
-                <svg
-                  className="hero__cta-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
-              <a
-                href="#services"
-                className="hero__cta hero__cta--secondary"
-                onClick={(e) => scrollToSection(e, "#services")}
-              >
-                Start Your Sales System
-              </a>
-            </div>
+          {/* CTA Buttons */}
+          <div className="hero__actions">
+            <a
+              href="#contact"
+              className="hero__cta hero__cta--primary"
+              onClick={(e) => scrollToSection(e, "#contact")}
+            >
+              Book a Free Consultation
+            </a>
+            <a
+              href="#services"
+              className="hero__cta hero__cta--secondary"
+              onClick={(e) => scrollToSection(e, "#services")}
+            >
+              Start the Excel Fast Trial
+            </a>
           </div>
 
-          {/* Right Image */}
-          <div className="hero__image-wrapper">
-            <div className="hero__image-container">
-              <img
-                src={heroImage}
-                alt="Professional business - Avaris Sales Solutions"
-                className="hero__image"
-              />
-              {/* Decorative elements */}
-              <div className="hero__image-accent"></div>
-            </div>
-          </div>
-        </div>
-
-        {/* Stats or Trust Indicators */}
-        <div className="hero__stats">
-          <div className="hero__stat">
-            <span className="hero__stat-number">24/7</span>
-            <span className="hero__stat-label">Sales Support</span>
-          </div>
-          <div className="hero__stat-divider"></div>
-          <div className="hero__stat">
-            <span className="hero__stat-number">100%</span>
-            <span className="hero__stat-label">Lead Coverage</span>
-          </div>
-          <div className="hero__stat-divider"></div>
-          <div className="hero__stat">
-            <span className="hero__stat-number">0</span>
-            <span className="hero__stat-label">Missed Opportunities</span>
-          </div>
+          {/* CTA Note */}
+          <p className="hero__cta-note">
+            No commitment required • Setup within 48 hours
+          </p>
         </div>
       </div>
 
-      {/* Bottom gradient fade */}
-      <div className="hero__gradient"></div>
+      {/* Trust Metrics Section - Below the fold */}
+      <div className="hero__trust-section">
+        <div className="hero__trust-container">
+          {/* Problem-Solution Text */}
+          <div className="hero__body-text">
+            <p className="hero__text-muted">
+              Most businesses don't struggle because they lack leads. They
+              struggle because inquiries are missed, replies are delayed, and
+              follow-ups never happen.
+            </p>
+            <p className="hero__text-body">
+              <strong>That's where Avaris Sales Solutions comes in.</strong> We
+              provide 24/7 outsourced sales support, lead management, and
+              structured follow-ups so every opportunity receives the attention
+              it deserves — even when you're offline.
+            </p>
+            <p className="hero__text-body">
+              With Avaris managing your sales pipeline, your business can
+              respond faster, follow up better, and close more deals
+              consistently.
+            </p>
+            <p className="hero__tagline">We Sell, You Excel.</p>
+          </div>
+          
+          <h2 className="hero__trust-title">
+            Built to Capture Every Opportunity
+          </h2>
+
+          <div className="hero__stats">
+            <div className="hero__stat">
+              <span className="hero__stat-number">24/7</span>
+              <span className="hero__stat-label">Sales Support</span>
+            </div>
+            <div className="hero__stat-divider"></div>
+            <div className="hero__stat">
+              <span className="hero__stat-number">100%</span>
+              <span className="hero__stat-label">Lead Coverage</span>
+            </div>
+            <div className="hero__stat-divider"></div>
+            <div className="hero__stat">
+              <span className="hero__stat-number">0</span>
+              <span className="hero__stat-label">Missed Opportunities</span>
+            </div>
+          </div>
+
+          <p className="hero__trust-tagline">
+            When your sales system works around the clock, your business never
+            misses a chance to grow.
+          </p>
+        </div>
+      </div>
     </section>
   );
 };

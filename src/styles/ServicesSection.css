@@ -37,7 +37,7 @@
 }
 
 .section-title {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: var(--font-weight-bold);
   letter-spacing: -0.02em;
   color: var(--avaris-black);
@@ -60,6 +60,8 @@
   transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card::before {
@@ -90,7 +92,7 @@
 }
 
 .service-title {
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
   font-weight: var(--font-weight-bold);
   color: var(--avaris-black);
   margin-bottom: var(--space-sm);
@@ -110,7 +112,7 @@
 }
 
 .service-subtitle {
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 1.5vw, 1rem);
   font-weight: var(--font-weight-medium);
   color: var(--avaris-red);
   line-height: 1.5;
@@ -119,23 +121,21 @@
 /* Card Body */
 .service-body {
   padding-left: var(--space-md);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-description {
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 1.5vw, 1rem);
   color: var(--avaris-gray-700);
   line-height: 1.7;
   margin-bottom: var(--space-lg);
 }
 
-.service-description strong {
-  color: var(--avaris-black);
-  font-weight: var(--font-weight-semibold);
-}
-
 /* Feature List */
 .feature-list-title {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -148,13 +148,14 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
 }
 
 .feature-list li {
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  font-size: 0.95rem;
+  font-size: clamp(0.9rem, 1.2vw, 0.95rem);
   color: var(--avaris-gray-700);
   padding: var(--space-xs) 0;
 }
@@ -174,12 +175,12 @@
   flex-shrink: 0;
 }
 
-/* 24/7 Badge (for first card) */
+/* 24/7 Badge */
 .badge-container {
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  margin-top: var(--space-lg);
+  margin-top: auto;
   padding-left: var(--space-md);
 }
 
@@ -201,6 +202,18 @@
   background: var(--avaris-red);
   border-radius: 50%;
   animation: pulse-red 2s ease-in-out infinite;
+}
+
+@keyframes pulse-red {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
 }
 
 /* Decorative Elements */
@@ -229,7 +242,7 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .services-grid {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
@@ -238,9 +251,37 @@
   .service-card {
     padding: var(--space-xl);
   }
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
 
   .accent-circle-1,
   .accent-circle-2 {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card {
+    padding: var(--space-lg);
+  }
+
+  .service-header {
+    padding-left: var(--space-sm);
+  }
+
+  .service-body {
+    padding-left: var(--space-sm);
+  }
+
+  .badge-container {
+    padding-left: var(--space-sm);
   }
 }

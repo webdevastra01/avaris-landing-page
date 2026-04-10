@@ -53,7 +53,7 @@
 }
 
 .trust-problem__title {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
   font-weight: var(--font-weight-bold);
   letter-spacing: -0.02em;
   color: var(--color-text);
@@ -84,7 +84,7 @@
 }
 
 .trust-problem__lead {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
   margin-bottom: var(--space-sm);
@@ -92,7 +92,7 @@
 }
 
 .trust-problem__sublead {
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 2vw, 1.125rem);
   color: var(--color-text-muted);
   font-weight: var(--font-weight-medium);
 }
@@ -140,7 +140,7 @@
 }
 
 .trust-problem__text {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
   font-weight: var(--font-weight-medium);
   color: var(--color-text);
   line-height: 1.5;
@@ -162,7 +162,7 @@
 }
 
 .trust-problem__warning {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text);
   margin: 0;
@@ -216,8 +216,15 @@
   text-align: center;
 }
 
+.trust-problem__truth-bold {
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+}
+
 .trust-problem__falsehood {
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 2vw, 1.125rem);
   color: var(--avaris-gray-500);
   text-decoration: line-through;
   margin-bottom: var(--space-sm);
@@ -225,16 +232,17 @@
 }
 
 .trust-problem__truth {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   font-weight: var(--font-weight-bold);
   color: var(--avaris-red);
   margin: 0;
+  line-height: 1.3;
 }
 
 /* Closing Statement */
 .trust-problem__closing {
   text-align: center;
-  padding: var(--space-xl);
+  padding: var(--space-xl) var(--space-2xl);
   background: var(--avaris-black);
   border-radius: var(--radius-lg);
   position: relative;
@@ -252,10 +260,10 @@
 }
 
 .trust-problem__mission {
-  font-size: 1.125rem;
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
   color: var(--avaris-white);
-  line-height: 1.7;
-  margin: 0;
+  line-height: 1.6;
+  margin: 0 0 var(--space-md) 0;
   position: relative;
   z-index: 1;
 }
@@ -263,6 +271,15 @@
 .trust-problem__mission strong {
   color: var(--avaris-red-light);
   font-weight: var(--font-weight-bold);
+}
+
+.trust-problem__sub-mission {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  color: var(--avaris-gray-300);
+  line-height: 1.6;
+  margin: 0;
+  position: relative;
+  z-index: 1;
 }
 
 /* Responsive Design */
@@ -291,23 +308,19 @@
   .trust-problem__closing {
     padding: var(--space-lg);
   }
-
-  .trust-problem__mission {
-    font-size: 1rem;
-  }
 }
 
 @media (max-width: 480px) {
   .trust-problem__title {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 
   .trust-problem__lead {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
 
   .trust-problem__truth {
-    font-size: 1.35rem;
+    font-size: 1.15rem;
   }
 
   .trust-problem__icon {

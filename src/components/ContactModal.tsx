@@ -9,7 +9,12 @@ interface ContactModalProps {
   description?: string;
 }
 
-const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, title, description }) => {
+const ContactModal: React.FC<ContactModalProps> = ({
+  isOpen,
+  onClose,
+  title,
+  description,
+}) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -35,26 +40,24 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, title, des
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call - Replace with your actual email service
     try {
-      // Example using a backend endpoint or email service like EmailJS, SendGrid, etc.
-      // const response = await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(formData),
-      // });
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // For now, simulate a delay
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      if (!response.ok) throw new Error("Failed");
 
       setSubmitStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-
-      // Close modal after 2 seconds on success
-      setTimeout(() => {
-        onClose();
-        setSubmitStatus("idle");
-      }, 2000);
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
     } catch (error) {
       setSubmitStatus("error");
     } finally {
@@ -97,7 +100,8 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, title, des
         <div className="contact-modal__header">
           <h2 className="contact-modal__title">{title}</h2>
           <p className="contact-modal__subtitle">
-            {description || "Fill out the form below and we'll get back to you shortly."}
+            {description ||
+              "Fill out the form below and we'll get back to you shortly."}
           </p>
         </div>
 
@@ -234,7 +238,9 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, title, des
         {/* Footer Note */}
         <p className="contact-modal__footer">
           Prefer email? Reach us directly at{" "}
-          <a href="mailto:contact@avaris.clientdesk@gmail.com">avaris.clientdesk@gmail.com</a>
+          <a href="mailto:contact@avaris.clientdesk@gmail.com">
+            avaris.clientdesk@gmail.com
+          </a>
         </p>
       </div>
     </div>

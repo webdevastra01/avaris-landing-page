@@ -1,0 +1,384 @@
+/* src/styles/brand.css or index.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  /* Brand Colors */
+  --avaris-red: #e31b23;
+  --avaris-red-dark: #b9161c;
+  --avaris-red-light: #ff4d54;
+
+  /* Neutrals */
+  --avaris-black: #0a0a0a;
+  --avaris-dark: #1a1a1a;
+  --avaris-gray-900: #2d2d2d;
+  --avaris-gray-700: #4a4a4a;
+  --avaris-gray-500: #6b7280;
+  --avaris-gray-300: #9ca3af;
+  --avaris-gray-100: #f3f4f6;
+  --avaris-white: #ffffff;
+
+  /* Semantic Colors - LIGHT THEME for landing */
+  --color-primary: var(--avaris-red);
+  --color-primary-hover: var(--avaris-red-dark);
+  --color-background: var(--avaris-gray-100); /* Landing page background */
+  --color-surface: var(--avaris-white); /* Cards, sections */
+  --color-surface-alt: var(--avaris-dark); /* Dark accent sections */
+  --color-text: var(--avaris-black); /* Primary text */
+  --color-text-muted: var(--avaris-gray-700); /* Secondary text */
+  --color-text-inverse: var(--avaris-white); /* Text on dark backgrounds */
+
+  /* Typography */
+  --font-family: "Inter", system-ui, -apple-system, sans-serif;
+  --font-weight-bold: 800;
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+
+  /* Spacing Scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Shadows - softer for light theme */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-red: 0 0 20px rgba(227, 27, 35, 0.2);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-family);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+/* Typography Utilities */
+.text-display {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--color-text);
+}
+
+.text-headline {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.text-title {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.text-body {
+  font-size: 1rem;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.text-caption {
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+/* Brand Accent Text */
+.text-accent {
+  color: var(--avaris-red);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Inverse text for dark sections */
+.text-inverse {
+  color: var(--color-text-inverse);
+}
+
+.text-inverse-muted {
+  color: var(--avaris-gray-300);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-xl);
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--avaris-red) 0%,
+    var(--avaris-red-dark) 100%
+  );
+  color: var(--avaris-white);
+  box-shadow: var(--shadow-red);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(227, 27, 35, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text);
+  border: 2px solid var(--avaris-red);
+}
+
+.btn-secondary:hover {
+  background: var(--avaris-red);
+  color: var(--avaris-white);
+}
+
+.btn-dark {
+  background: var(--avaris-black);
+  color: var(--avaris-white);
+}
+
+.btn-dark:hover {
+  background: var(--avaris-dark);
+  transform: translateY(-2px);
+}
+
+/* Cards - Light theme */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--avaris-gray-100);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border-color: var(--avaris-gray-300);
+}
+
+.card-accent {
+  background: var(--color-surface);
+  border-left: 4px solid var(--avaris-red);
+  box-shadow: var(--shadow-card);
+}
+
+/* Dark card for contrast sections */
+.card-dark {
+  background: var(--color-surface-alt);
+  border: 1px solid var(--avaris-gray-700);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  color: var(--color-text-inverse);
+}
+
+/* Layout Components */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.section {
+  padding: var(--space-3xl) 0;
+}
+
+/* Dark section for contrast (CTA, footer, etc.) */
+.section-dark {
+  background-color: var(--avaris-black);
+  color: var(--color-text-inverse);
+  padding: var(--space-3xl) 0;
+}
+
+.section-dark .text-headline,
+.section-dark .text-title {
+  color: var(--color-text-inverse);
+}
+
+/* Red circular accents */
+.accent-circle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: 40px solid var(--avaris-red);
+  border-radius: 50%;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Tagline badge */
+.tagline {
+  display: inline-block;
+  background: var(--avaris-red);
+  color: var(--avaris-white);
+  padding: var(--space-sm) var(--space-lg);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: var(--radius-sm);
+  clip-path: polygon(0 0, 100% 0, 98% 100%, 2% 100%);
+}
+
+/* Gradient overlays */
+.gradient-overlay {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(243, 244, 246, 0.9) 100%
+  );
+}
+
+/* Red glow effect */
+.glow-red {
+  box-shadow: 0 0 20px rgba(227, 27, 35, 0.3);
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.gap-sm {
+  gap: var(--space-sm);
+}
+.gap-md {
+  gap: var(--space-md);
+}
+.gap-lg {
+  gap: var(--space-lg);
+}
+
+.mt-sm {
+  margin-top: var(--space-sm);
+}
+.mt-md {
+  margin-top: var(--space-md);
+}
+.mt-lg {
+  margin-top: var(--space-lg);
+}
+
+/* Grid layouts */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animation */
+@keyframes pulse-red {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.pulse {
+  animation: pulse-red 2s ease-in-out infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--avaris-gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--avaris-gray-300);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--avaris-red);
+}

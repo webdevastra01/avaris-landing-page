@@ -275,7 +275,7 @@
   }
 
   .navbar__logo-icon {
-    width: 36px;
+    width: 86px;
     height: 36px;
     font-size: 1.1rem;
   }
@@ -288,7 +288,7 @@
 }
 
 .navbar:not(.navbar--scrolled) .navbar__toggle-bar {
-  background: var(--avaris-white);
+  background: var(--avaris-dark);
 }
 
 .navbar:not(.navbar--scrolled) .navbar__link::after {

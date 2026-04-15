@@ -40,7 +40,9 @@ function App() {
 
         <meta property="og:type" content="website" />
 
-        <meta property="og:url" content="https://avarissales.com" />
+        <meta property="og:url" content="https://avarissalessolutions.vercel.app/" />
+
+        <meta name="google-site-verification" content="8n6Y3_x3CUtbSQU5Y2SOenDGzYi_Dlsz3Cm-D7W8IYs" />
       </Helmet>
 
       <Navigationbar />
